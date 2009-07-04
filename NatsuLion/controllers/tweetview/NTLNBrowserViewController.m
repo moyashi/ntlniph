@@ -78,12 +78,14 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)aWebView {
 	loading = YES;
+	[[UIApplication sharedApplication]setNetworkActivityIndicatorVisible:YES];
 	[self updateReloadButton];
 	[self updatePrevNextButton];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)aWebView {
 	loading = NO;
+	[[UIApplication sharedApplication]setNetworkActivityIndicatorVisible:NO];
 	title.title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
 	[self updateReloadButton];
 	[self updatePrevNextButton];
@@ -91,6 +93,7 @@
 
 - (void)webView:(UIWebView *)aWebView didFailLoadWithError:(NSError *)error {
 	if (error.code != -999) {
+		[[UIApplication sharedApplication]setNetworkActivityIndicatorVisible:NO];
 		[[NTLNAlert instance] alert:@"Browser error" withMessage:error.localizedDescription];
 	}
 }
@@ -162,7 +165,11 @@
 
 - (void)reloadButtonPushed:(id)sender {
 	if (loading) {
+		loading = NO;
 		[webView stopLoading];
+		[[UIApplication sharedApplication]setNetworkActivityIndicatorVisible:NO];
+		[self updateReloadButton];
+		[self updatePrevNextButton];
 	} else {
 		[webView reload];
 	}
@@ -170,6 +177,7 @@
 
 - (void)doneButtonPushed:(id)sender {
 	[webView stopLoading];
+	[[UIApplication sharedApplication]setNetworkActivityIndicatorVisible:NO];
 	[webView loadHTMLString:@"" baseURL:nil];
 	[self dismissModalViewControllerAnimated:YES];
 }
