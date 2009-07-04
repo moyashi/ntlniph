@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		351855070FFFD118000A47F8 /* normal_06.png in Resources */ = {isa = PBXBuildFile; fileRef = 351855040FFFD118000A47F8 /* normal_06.png */; };
+		351855080FFFD118000A47F8 /* normal_07.png in Resources */ = {isa = PBXBuildFile; fileRef = 351855050FFFD118000A47F8 /* normal_07.png */; };
+		351855090FFFD118000A47F8 /* normal_08.png in Resources */ = {isa = PBXBuildFile; fileRef = 351855060FFFD118000A47F8 /* normal_08.png */; };
+		3518550D0FFFD127000A47F8 /* pushed_06.png in Resources */ = {isa = PBXBuildFile; fileRef = 3518550A0FFFD127000A47F8 /* pushed_06.png */; };
+		3518550E0FFFD127000A47F8 /* pushed_07.png in Resources */ = {isa = PBXBuildFile; fileRef = 3518550B0FFFD127000A47F8 /* pushed_07.png */; };
+		3518550F0FFFD127000A47F8 /* pushed_08.png in Resources */ = {isa = PBXBuildFile; fileRef = 3518550C0FFFD127000A47F8 /* pushed_08.png */; };
 		3520052B0FFE987500B2278C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3520052A0FFE987500B2278C /* MediaPlayer.framework */; };
 		355F2E6F0FFE9DDA002E315A /* NTLNMusicSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F2E6D0FFE9DDA002E315A /* NTLNMusicSettingViewController.m */; };
 		8D1EF37B0FA6C46200BD452F /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D1EF37A0FA6C46200BD452F /* libxml2.2.dylib */; };
@@ -179,6 +185,12 @@
 		1D6058910D05DD3D006BFB54 /* ntlniph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ntlniph.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../../main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* ntlniph_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ntlniph_Prefix.pch; path = ../../ntlniph_Prefix.pch; sourceTree = "<group>"; };
+		351855040FFFD118000A47F8 /* normal_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = normal_06.png; sourceTree = "<group>"; };
+		351855050FFFD118000A47F8 /* normal_07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = normal_07.png; sourceTree = "<group>"; };
+		351855060FFFD118000A47F8 /* normal_08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = normal_08.png; sourceTree = "<group>"; };
+		3518550A0FFFD127000A47F8 /* pushed_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pushed_06.png; sourceTree = "<group>"; };
+		3518550B0FFFD127000A47F8 /* pushed_07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pushed_07.png; sourceTree = "<group>"; };
+		3518550C0FFFD127000A47F8 /* pushed_08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pushed_08.png; sourceTree = "<group>"; };
 		3520052A0FFE987500B2278C /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		355F2E6D0FFE9DDA002E315A /* NTLNMusicSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMusicSettingViewController.m; sourceTree = "<group>"; };
 		355F2E6E0FFE9DDA002E315A /* NTLNMusicSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMusicSettingViewController.h; sourceTree = "<group>"; };
@@ -582,11 +594,17 @@
 				8DBB730A0F87E83500B54378 /* normal_03.png */,
 				8DBB730B0F87E83500B54378 /* normal_04.png */,
 				8DBB730C0F87E83500B54378 /* normal_05.png */,
+				351855040FFFD118000A47F8 /* normal_06.png */,
+				351855050FFFD118000A47F8 /* normal_07.png */,
+				351855060FFFD118000A47F8 /* normal_08.png */,
 				8DBB730D0F87E83500B54378 /* pushed_01.png */,
 				8DBB730E0F87E83500B54378 /* pushed_02.png */,
 				8DBB730F0F87E83500B54378 /* pushed_03.png */,
 				8DBB73100F87E83500B54378 /* pushed_04.png */,
 				8DBB73110F87E83500B54378 /* pushed_05.png */,
+				3518550A0FFFD127000A47F8 /* pushed_06.png */,
+				3518550B0FFFD127000A47F8 /* pushed_07.png */,
+				3518550C0FFFD127000A47F8 /* pushed_08.png */,
 				8DD6369C0FA9D7DB00C49838 /* normal_black_02.png */,
 				8DD6369D0FA9D7DB00C49838 /* normal_black_03.png */,
 				8DD6369E0FA9D7DB00C49838 /* normal_black_01.png */,
@@ -1136,6 +1154,12 @@
 				F19C451D0FC158E200FF2279 /* browser_icons_01.png in Resources */,
 				F19C451E0FC158E200FF2279 /* browser_icons_05.png in Resources */,
 				F19C451F0FC158E200FF2279 /* browser_icons_03.png in Resources */,
+				351855070FFFD118000A47F8 /* normal_06.png in Resources */,
+				351855080FFFD118000A47F8 /* normal_07.png in Resources */,
+				351855090FFFD118000A47F8 /* normal_08.png in Resources */,
+				3518550D0FFFD127000A47F8 /* pushed_06.png in Resources */,
+				3518550E0FFFD127000A47F8 /* pushed_07.png in Resources */,
+				3518550F0FFFD127000A47F8 /* pushed_08.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

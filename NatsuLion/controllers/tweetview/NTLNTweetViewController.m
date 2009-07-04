@@ -148,7 +148,7 @@
 		case 0:
 			return 70;
 		case 1:
-			return 70 + [self getTextboxHeight:message.text] + 12;
+			return 70 + [self getTextboxHeight:message.text] + 12 + 36;
 	}
 	return 44;
 }
@@ -274,6 +274,31 @@
 	[NTLNTweetPostViewController present:self.tabBarController];
 }
 
+- (void)dotReplyButtonAction:(id)sender {
+	if ([[[NTLNTwitterPost shardInstance] text] length] > 0) {
+		[[NTLNTwitterPost shardInstance] createReplyPost:[@"@" stringByAppendingString:message.screenName] 
+										withReplyMessage:message];
+	} else {
+		[[NTLNTwitterPost shardInstance] createReplyPost:[@".@" stringByAppendingString:message.screenName] 
+										withReplyMessage:message];
+	}
+
+	[NTLNTweetPostViewController present:self.tabBarController];
+}
+
+- (void)copyButtonAction:(id)sender {
+	[[UIPasteboard generalPasteboard] setString:[NSString stringWithFormat:@"@%@: %@ http://twitter.com/%@/status/%@",
+												 message.screenName,
+												 message.text,
+												 message.screenName,
+												 message.statusId]];
+}
+
+- (void)viaButtonAction:(id)sender {
+	[[NTLNTwitterPost shardInstance] updateText:[NSString stringWithFormat:@"%@ (via @%@)", message.text, message.screenName]];
+	[NTLNTweetPostViewController present:self.tabBarController];
+}
+
 - (CGFloat)getTextboxHeight:(NSString *)str
 {
 	CGSize size = [str sizeWithFont:[UIFont systemFontOfSize:TEXT_FONT_SIZE] 
@@ -333,19 +358,33 @@
 	textHeight += 12;
 	
 	
-	UIImage *bimage[5];
+	UIImage *bimage[11];
 	if ([[NTLNConfiguration instance] darkColorTheme]) {
 		bimage[0] = [UIImage imageNamed:@"normal_black_03.png"];
 		bimage[1] = [UIImage imageNamed:@"pushed_black_03.png"];
 		bimage[2] = [UIImage imageNamed:@"pushed_black_04.png"];
 		bimage[3] = [UIImage imageNamed:@"normal_black_05.png"];
 		bimage[4] = [UIImage imageNamed:@"pushed_black_05.png"];
+		// following icons are not prepared yet.
+		bimage[5] = [UIImage imageNamed:@"normal_06.png"];
+		bimage[6] = [UIImage imageNamed:@"pushed_06.png"];
+		bimage[7] = [UIImage imageNamed:@"normal_07.png"];
+		bimage[8] = [UIImage imageNamed:@"pushed_07.png"];
+		bimage[9] = [UIImage imageNamed:@"normal_08.png"];
+		bimage[10] = [UIImage imageNamed:@"pushed_08.png"];
 	} else {
 		bimage[0] = [UIImage imageNamed:@"normal_03.png"];
 		bimage[1] = [UIImage imageNamed:@"pushed_03.png"];
 		bimage[2] = [UIImage imageNamed:@"pushed_04.png"];
 		bimage[3] = [UIImage imageNamed:@"normal_05.png"];
 		bimage[4] = [UIImage imageNamed:@"pushed_05.png"];
+		// following icons are not prepared yet.
+		bimage[5] = [UIImage imageNamed:@"normal_06.png"];
+		bimage[6] = [UIImage imageNamed:@"pushed_06.png"];
+		bimage[7] = [UIImage imageNamed:@"normal_07.png"];
+		bimage[8] = [UIImage imageNamed:@"pushed_07.png"];
+		bimage[9] = [UIImage imageNamed:@"normal_08.png"];
+		bimage[10] = [UIImage imageNamed:@"pushed_08.png"];
 	}
 		
 	int y = textHeight + 13*2;
@@ -379,6 +418,33 @@
 		[b addTarget:self action:@selector(retweetButtonAction:) forControlEvents:UIControlEventTouchUpInside];
 		[cell addSubview:b];
 	}
+
+	// second button row
+	{
+		UIButton *b = [UIButton buttonWithType:UIButtonTypeCustom];
+		[b setFrame:CGRectMake(13, y + 36, 100, 36)];
+		[b setBackgroundImage:bimage[5] forState:UIControlStateNormal];
+		[b setBackgroundImage:bimage[6] forState:UIControlStateHighlighted];
+		[b addTarget:self action:@selector(dotReplyButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+		[cell addSubview:b];
+	}
+	{
+		UIButton *b = [UIButton buttonWithType:UIButtonTypeCustom];
+		[b setFrame:CGRectMake(13+100, y + 36, 97, 36)];
+		[b setBackgroundImage:bimage[7] forState:UIControlStateNormal];
+		[b setBackgroundImage:bimage[8] forState:UIControlStateHighlighted];
+		[b addTarget:self action:@selector(copyButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+		[cell addSubview:b];		
+	}
+	{
+		UIButton *b = [UIButton buttonWithType:UIButtonTypeCustom];
+		[b setFrame:CGRectMake(13+100+97, y + 36, 100, 36)];
+		[b setBackgroundImage:bimage[9] forState:UIControlStateNormal];
+		[b setBackgroundImage:bimage[10] forState:UIControlStateHighlighted];
+		[b addTarget:self action:@selector(viaButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+		[cell addSubview:b];
+	}
+	
 	cell.selectionStyle = UITableViewCellSelectionStyleNone;
 //	cell.cellType = NTLNCellTypeNoRound;
 //	cell.bgcolor = [[NTLNColors instance] oddBackground];
