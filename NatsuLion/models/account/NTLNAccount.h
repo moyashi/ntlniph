@@ -27,6 +27,8 @@
 
 - (NSString*)footer;
 
+- (NSString*)music;
+
 @end
 
 

@@ -55,6 +55,10 @@ GTMOBJECT_SINGLETON_BOILERPLATE(NTLNAccount, sharedInstance)
 	return [[NSUserDefaults standardUserDefaults] stringForKey:NTLN_PREFERENCE_FOOTER];
 }
 
+- (NSString*)music {
+	return [[NSUserDefaults standardUserDefaults] stringForKey:NTLN_PREFERENCE_MUSIC];
+}
+
 - (BOOL)valid {
 #ifdef ENABLE_OAUTH
 	return screenName.length > 0 &&

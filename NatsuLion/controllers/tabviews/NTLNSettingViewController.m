@@ -7,6 +7,7 @@
 #import "NTLNAccelerometerSensor.h"
 #import "NTLNAppDelegate.h"
 #import "NTLNFooterSettingViewController.h"
+#import "NTLNMusicSettingViewController.h"
 #import "NTLNOAuthConsumer.h"
 
 @interface NTLNSettingViewController(Private)
@@ -67,6 +68,10 @@
 				   nil];
 
 	NSArray *g5 = [NSArray arrayWithObjects:
+				   [UICPrototypeTableCell cellForTitle:@"Music"],
+				   nil];
+	
+	NSArray *g6 = [NSArray arrayWithObjects:
 				   [UICPrototypeTableCell cellForTitle:@"About NatsuLion for iPhone"],
 				   nil];
 	
@@ -76,6 +81,7 @@
 			   [UICPrototypeTableGroup groupWithCells:g3 withTitle:nil], 
 			   [UICPrototypeTableGroup groupWithCells:g4 withTitle:nil], 
 			   [UICPrototypeTableGroup groupWithCells:g5 withTitle:nil], 
+			   [UICPrototypeTableGroup groupWithCells:g6 withTitle:nil], 
 			   nil] retain];
 }
 
@@ -106,12 +112,12 @@
 	UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
 
 	// for "Twitter account" or "Footer" cell
-	if (([indexPath section] == 0 || [indexPath section] == 3) && [indexPath row] == 0) {
+	if (([indexPath section] == 0 || [indexPath section] == 3 || [indexPath section] == 4) && [indexPath row] == 0) {
 		cell.accessoryType = UITableViewCellAccessoryNone;
 	}
 	
 	// for "About NatsuLion for iPhone" cell
-	if ([indexPath section] == 4 && [indexPath row] == 0) {
+	if ([indexPath section] == 5 && [indexPath row] == 0) {
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	}
 
@@ -139,8 +145,18 @@
 		[self.tabBarController presentModalViewController:nc animated:YES];
 	}
 
-	// for "About NatsuLion for iPhone" cell
+	// for "Music" cell
 	if ([indexPath section] == 4 && [indexPath row] == 0) {
+		UITableViewController *vc = [[[NTLNMusicSettingViewController alloc] 
+									  initWithStyle:UITableViewStyleGrouped] autorelease];
+		UINavigationController *nc = [[[UINavigationController alloc] 
+									   initWithRootViewController:vc] autorelease];
+		[nc.navigationBar setBarStyle:UIBarStyleBlackOpaque];
+		[self.tabBarController presentModalViewController:nc animated:YES];
+	}
+	
+	// for "About NatsuLion for iPhone" cell
+	if ([indexPath section] == 5 && [indexPath row] == 0) {
 		UIViewController *vc = [[[NTLNAboutViewController alloc] init] autorelease];
 		[self.navigationController pushViewController:vc animated:YES];
 	}

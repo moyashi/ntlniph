@@ -12,6 +12,8 @@
 
 #define NTLN_PREFERENCE_FOOTER					@"footer"
 
+#define NTLN_PREFERENCE_MUSIC					@"music"
+
 #define NTLN_PREFERENCE_LEFTHAND				@"lefthand"
 
 #define NTLN_OAUTH_PROVIDER						@"twitter.com"

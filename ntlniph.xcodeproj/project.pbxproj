@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		3520052B0FFE987500B2278C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3520052A0FFE987500B2278C /* MediaPlayer.framework */; };
+		355F2E6F0FFE9DDA002E315A /* NTLNMusicSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F2E6D0FFE9DDA002E315A /* NTLNMusicSettingViewController.m */; };
 		8D1EF37B0FA6C46200BD452F /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D1EF37A0FA6C46200BD452F /* libxml2.2.dylib */; };
 		8D3576F30E65D90E00A22D11 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D3576F20E65D90E00A22D11 /* Default.png */; };
 		8D3C40150F8FC26300E69E26 /* more_button_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D3C40130F8FC26300E69E26 /* more_button_normal.png */; };
@@ -177,6 +179,9 @@
 		1D6058910D05DD3D006BFB54 /* ntlniph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ntlniph.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../../main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* ntlniph_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ntlniph_Prefix.pch; path = ../../ntlniph_Prefix.pch; sourceTree = "<group>"; };
+		3520052A0FFE987500B2278C /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		355F2E6D0FFE9DDA002E315A /* NTLNMusicSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMusicSettingViewController.m; sourceTree = "<group>"; };
+		355F2E6E0FFE9DDA002E315A /* NTLNMusicSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMusicSettingViewController.h; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1EF37A0FA6C46200BD452F /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		8D3576F20E65D90E00A22D11 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = resources/Default.png; sourceTree = "<group>"; };
@@ -449,6 +454,7 @@
 				F17419A90E2A45AF008BA863 /* CoreGraphics.framework in Frameworks */,
 				8DBA55A80E96A9F700109F5D /* AudioToolbox.framework in Frameworks */,
 				8D1EF37B0FA6C46200BD452F /* libxml2.2.dylib in Frameworks */,
+				3520052B0FFE987500B2278C /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +497,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3520052A0FFE987500B2278C /* MediaPlayer.framework */,
 				8D1EF37A0FA6C46200BD452F /* libxml2.2.dylib */,
 				F17419A80E2A45AF008BA863 /* CoreGraphics.framework */,
 				F17419030E2A2E6A008BA863 /* UIKit.framework */,
@@ -671,6 +678,8 @@
 				F1474EF90FD3F457007D9F4C /* NTLNAboutViewController.m */,
 				F1474EFA0FD3F457007D9F4C /* NTLNFooterSettingViewController.h */,
 				F1474EFB0FD3F457007D9F4C /* NTLNFooterSettingViewController.m */,
+				355F2E6D0FFE9DDA002E315A /* NTLNMusicSettingViewController.m */,
+				355F2E6E0FFE9DDA002E315A /* NTLNMusicSettingViewController.h */,
 				F1474EFC0FD3F457007D9F4C /* NTLNTwitterAccountViewController.h */,
 				F1474EFD0FD3F457007D9F4C /* NTLNTwitterAccountViewController.m */,
 			);
@@ -1249,6 +1258,7 @@
 				F1474FEE0FD3F486007D9F4C /* UICTableViewCellTextInput.m in Sources */,
 				F1474FEF0FD3F486007D9F4C /* UICTableViewController.m in Sources */,
 				F1474FF00FD3F486007D9F4C /* UICTableViewControllerSelect.m in Sources */,
+				355F2E6F0FFE9DDA002E315A /* NTLNMusicSettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
